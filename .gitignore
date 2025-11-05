@@ -1,0 +1,22 @@
+# File: .gitignore
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+# This is your local environment and should never be uploaded
+venv/
+.venv/
+
+# Model, Log, and Data files
+# These are artifacts or source data, not code.
+# The CI/CD pipeline will create its own .pkl file.
+*.pkl
+*.log
+*.csv
+
+# IDE / OS specific files
+.DS_Store
+.vscode/
+.idea/
