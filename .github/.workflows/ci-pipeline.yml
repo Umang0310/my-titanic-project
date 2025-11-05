@@ -27,11 +27,11 @@ jobs:
         pip install pytest # Explicitly install pytest
 
     # Step 4: Run the training script to generate the .pkl file
-    # We need to do this because we ignored the .pkl and .csv files
-    # We will download the dataset fresh from the source
     - name: 4. Train the model
       run: |
-        curl -o titanic.csv https://raw.githubusercontent.com/mwaskom/seaborn-data/master/titanic.csv
+        # --- THIS IS THE FIXED LINE ---
+        # We are using 'wget' instead of 'curl'
+        wget -O titanic.csv https://raw.githubusercontent.com/mwaskom/seaborn-data/master/titanic.csv
         python train.py
         
     # Step 5: Run the tests!
